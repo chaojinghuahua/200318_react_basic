@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>使用函数定义组件</title>
+</head>
+
+<body>
+  <div id="test"></div>
+  <!--引入react核心库（必须最先引入） -->
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <!-- 引入react-dom -->
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <!-- 引入babel，用于将jsx转为js -->
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+
+  <script type="text/babel">
+    // 1、创建组件---->函数式(首字母大写，必须要有返回值)
+    function Demo () {
+      console.log(this); // undefined,因为经过bable编译后，开启了严格模式,禁止自定义的函数指向window
+      return <h1>我是应函数定义的组件（适用于简单组件的定义）</h1>
+    }
+    // 2、渲染组件到页面
+    ReactDOM.render(<Demo/>,document.getElementById('test'))
+
+    /*
+
+    
+    */
+	</script>
+
+</body>
+
+</html>
